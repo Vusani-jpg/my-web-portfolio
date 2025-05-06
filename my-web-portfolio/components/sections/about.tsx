@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Code, Briefcase, GraduationCap, MapPin } from "lucide-react"
-import SectionHeading from "../../components/ui/section-heading"
-
+import SectionHeading from "../ui/section-heading" 
+import { cn } from "@/lib/utils"
 
 export default function About() {
   const [mounted, setMounted] = useState(false)
@@ -15,81 +15,71 @@ export default function About() {
 
   const quickFacts = [
     {
-      icon: <Code className="h-5 w-5 text-teal-400" />,
-      title: "Software Engineer",
-      description: "Passionate about clean code and innovative solutions",
+      key: "software-engineer",
+      icon: <Code className="h-5 w-5 text-teal-400"/>,
+      title: "Software Engineering",
+      description: "Passionate about coding and innovative Technology ",
     },
     {
-      icon: <Briefcase className="h-5 w-5 text-teal-400" />,
-      title: "ML Engineer",
-      description: "Building intelligent systems with cutting-edge AI",
+      key: "Software-development",
+      icon: <Briefcase className="h-5 w-5 text-teal-400"/>,
+      title: "Software Development",
+      description: "Building responsive, user-friendly applications",
     },
     {
-      icon: <GraduationCap className="h-5 w-5 text-teal-400" />,
-      title: "Continuous Learner",
-      description: "Always expanding knowledge and skills",
+      key: "continuous-learner",
+      icon: <GraduationCap className="h-5 w-5 text-teal-400"/>,
+      title: "Mechanical Engineering",
+      description: "Graduate from Cape Peninsula University of Technology",
     },
     {
-      icon: <MapPin className="h-5 w-5 text-teal-400" />,
-      title: "Samastipur, Bihar",
-      description: "Based in India",
+      key: "johannesburg",
+      icon: <MapPin className="h-5 w-5 text-white"/>,
+      title: "Johannesburg, Gauteng",
+      description: "Based in RSA",
     },
   ]
 
   return (
     <section id="about" className="py-20 relative scroll-mt-16">
       <SectionHeading title="About Me" subtitle="Get to know me better" />
-
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* <div
+        <div
           className={cn(
-            "relative opacity-0 transform -translate-x-8 transition-all duration-1000",
+            "mx-auto space-y-6 opacity-0 transform translate-x-8 transition-all duration-1000 delay-300",
             mounted && "opacity-100 translate-x-0",
           )}
-        > */}
-        
-          <div className="relative w-full aspect-square max-w-md mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-teal-300/20 rounded-2xl -rotate-6 transform scale-95"/>
-            <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm rounded-2xl border border-gray-800/50"/>
-            <div className="relative h-full w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/profile.png"
-                alt="Ayush Raj Jha"
-                width={400}
-                height={400}
-                className="object-cover h-full w-full"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+        >
+         
+          <Image className="mx-auto object-cover max-w-screen-md float-end rounded-2xl shadow-lg shadow-gray-900/50 mt-0.5" 
+            src="/images/Ghost.jpg"
+            alt="profile picture" 
+            width={374}
+            height={350}
+            priority
+            />
+            
 
-        {/* <div
-          className={cn(
-            "space-y-6 opacity-0 transform translate-x-8 transition-all duration-1000 delay-300",
-            mounted && "opacity-100 translate-x-0",
-          )}
-        > */}
-          <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-800/50 shadow-lg">
-            <p className="text-gray-300 leading-relaxed">
-              I'm a passionate Software Engineer and Machine Learning enthusiast with a strong foundation in
-              problem-solving and algorithm design. I enjoy creating responsive, user-friendly applications and
-              exploring the possibilities of AI.
+          <div className="box-content size-82 max-w-screen-md bg-gray-900 backdrop-blur-sm p-6 rounded-2xl border border-gray-800 shadow-lg">
+            <p className=" text-gray-300 leading-relaxed">
+            Aspiring Software Engineer passionate about building responsive, user-friendly applications and exploring the evolving possibilities of AI. 
+            Eager to thrive in collaborative development environments and continuously expand technical and creative skill sets.
             </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              My journey in tech is driven by curiosity and a desire to build solutions that make a difference. I'm
-              constantly learning and adapting to new technologies to stay at the forefront of innovation.
-            </p>
+            <p className="text-gray-300 leading-relaxed mt-3">
+            My journey in tech is fueled by curiosity and a passion for creating impactful solutions. 
+            I continuously learn and adapt to emerging technologies to stay ahead in a rapidly evolving innovative space. </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {quickFacts.map((fact, index) => (
+          <div className="grid grid-cols-4 sm:grid-cols-2 gap-2">
+            {quickFacts.map((fact) => (
+              // Using key as index for simplicity, but in a real app, use a unique identifier
               <div
-                key={index}
-                className="bg-gray-900/30 backdrop-blur-sm p-4 rounded-xl border border-gray-800/50 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(45,212,191,0.15)]"
+                key={fact.key}
+                // biome-ignore lint/a11y/useSemanticElements: <explanation>
+                role="listitem"
+                className="bg-gray-900 backdrop-blur-sm p-4 rounded-xl border border-gray-800/50 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(45,212,191,0.15)]"
               >
-                <div className="flex items-start gap-3">
-                  <div className="mt-1">{fact.icon}</div>
+                <div className="flex items-center gap-4">
+                  <div>{fact.icon}</div>
                   <div>
                     <h3 className="font-medium text-gray-200">{fact.title}</h3>
                     <p className="text-sm text-gray-400">{fact.description}</p>
@@ -98,8 +88,8 @@ export default function About() {
               </div>
             ))}
           </div>
-        {/* </div>
-      </div>
-    </section> */}
-  );
+        </div>
+    
+    </section>
+  )
 }

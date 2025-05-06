@@ -1,45 +1,61 @@
-import Link from "next/link";
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" },
+]
 
 export default function Navbar() {
-  return (
-    <div>
-      <nav className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
-        <Link
-          className="text-2xl font-bold p-4 hover:text-blue-400 opacity-80 transition-all"
-          href="/"
-        >
-          VM
-        </Link>
+  const [scrolled, setScrolled] = useState(false)
 
-        <ul className="flex gap-14 items-center text-lg font-semibold">
-          <li>
-            <Link href="/about" className="hover:text-blue-400 transition-all">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/skills" className="hover:text-blue-400 transition-all">
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/projects"
-              className="hover:text-blue-400 transition-all"
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contacts"
-              className="hover:text-blue-400 transition-all"
-            >
-              Contacts
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return (
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "bg-gray-950/80 backdrop-blur-lg border-b border-gray-800" : "bg-transparent",
+      )}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link
+            href="/"
+            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200 hover:opacity-80 transition-opacity"
+          >
+            VM
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-teal-400 transition-colors duration-800"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+         
+          
+          </div>
+        </div>
+    
+    </nav>
+  )
 }
