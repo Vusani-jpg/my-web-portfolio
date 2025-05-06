@@ -3,12 +3,13 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { MapPin, Phone, Mail, Linkedin, Github, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Linkedin, Github, Send,} from "lucide-react"
 import SectionHeading from "../../components/ui/section-heading"
 import { Button } from "../../src/components/ui/button"
 import { Input } from "../../src/components/ui/input"
 import { Textarea } from "../../src/components/ui/textarea"
 import { cn } from "@/lib/utils"
+import { link } from "fs"
 
 export default function Contact() {
   const [mounted, setMounted] = useState(false)
@@ -47,6 +48,7 @@ export default function Contact() {
       icon: <Phone className="h-5 w-5 text-teal-400" />,
       label: "Phone",
       value: "+27 621611797",
+      link: "tel:+27621611797",
     },
     {
       icon: <Mail className="h-5 w-5 text-teal-400" />,
@@ -64,8 +66,16 @@ export default function Contact() {
       icon: <Github className="h-5 w-5 text-teal-400" />,
       label: "GitHub",
       value: "github.com/Vusani-jpg",
+      link: "https://github.com/Vusani-jpg", 
+    },
+    {
+
+    icon: <Github className="h-5 w-5 text-teal-400" />,
+      label: "GitHub",
+      value: "github.com/Vusani-jpg",
       link: "https://github.com/Vusani-jpg",
     },
+
   ]
 
   return (
