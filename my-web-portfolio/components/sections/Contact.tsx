@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { MapPin, Phone, Mail, Linkedin, Github, Send,} from "lucide-react"
+import { MapPin, Phone, Mail, Linkedin, Github, Send, whatsapp } from "lucide-react"
 import SectionHeading from "../../components/ui/section-heading"
 import { Button } from "../../src/components/ui/button"
 import { Input } from "../../src/components/ui/input"
@@ -166,7 +166,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Reach out "
+                  placeholder="Your Message"
                   required
                   className="bg-gray-800/50 border-gray-700 focus:border-teal-500 focus:ring-teal-500/20 min-h-[120px]"
                 />
