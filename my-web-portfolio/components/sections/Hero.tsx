@@ -24,8 +24,8 @@ export default function Hero() {
 					<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
 						VUSANI MATSIGILA
 					</h1>
-					<p className="text-2xl items-end ml-16 mt-4">
-						Software Developer · Mechanical Engineer
+					<p className="text-2xl items-end ml-16 mt-4 mx-auto">
+						Software Developer &bull; Mechanical Engineer
 					</p>
 					<div className="pt-4 flex flex-wrap gap-4 justify-center">
 						<Link

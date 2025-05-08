@@ -22,11 +22,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetElement = document.querySelector(href)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-gray-950/80 backdrop-blur-lg border-b border-gray-800" : "bg-transparent",
+        scrolled ? "bg-gray-700 backdrop-blur-lg border-2 border-gray-800" : "bg-transparent",
       )}
     >
       <div className="container mx-auto px-4">
@@ -44,6 +53,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-gray-300 hover:text-teal-400 transition-colors duration-800"
               >
                 {item.name}
