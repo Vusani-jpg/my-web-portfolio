@@ -5,13 +5,10 @@ import Image from "next/image";
 import { Code, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import SectionHeading from "../ui/section-heading";
 import { cn } from "@/lib/utils";
-import { cn } from "@/lib/utils";
 
 
 export default function About() {
 	const [mounted, setMounted] = useState(false);
-import { cn } from "@/lib/utils";
-
 
 	useEffect(() => {
 		setMounted(true);
