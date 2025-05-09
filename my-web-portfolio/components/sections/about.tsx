@@ -16,7 +16,7 @@ export default function About() {
 	const quickFacts = [
 		{
 			key: "software-engineer",
-			icon: <Code className="h-5 w-5 text-teal-400" />,
+			icon: <Code className="h-5 w-5 text-primary-foreground" />,
 			title: "Software Engineering",
 			description: "Passionate about coding and innovative Technology ",
 		},

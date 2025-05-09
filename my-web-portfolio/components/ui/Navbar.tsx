@@ -4,10 +4,14 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
-const navItems = [
+const navItems = [ 
+  { name: "Home", href:"#hero" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
+ 
+
+
 ]
 
 export default function Navbar() {
@@ -42,19 +46,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200 hover:opacity-80 transition-opacity"
+            className="text-xl font-bold bg-primary border-b-primary rounded-4xl p-2 bg-clip-text hover:opacity-50 transition-opacity duration-300"
           >
             VM
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-gray-300 hover:text-teal-400 transition-colors duration-800"
+                className="text hover:text-primary-foreground transition-colors duration-800"
               >
                 {item.name}
               </Link>
