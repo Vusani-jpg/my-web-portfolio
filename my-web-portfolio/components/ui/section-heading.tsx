@@ -9,8 +9,8 @@ interface SectionHeadingProps {
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
           {title}
         </h2>
-        {subtitle && <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>}
-        <div className="w-35 h-1 bg-white mx-auto mt-4 rounded-full"/>
+        {subtitle && <p className="text-white max-w-2xl mx-auto">{subtitle}</p>}
+        <div className="w-35 h-1 bg-primary mx-auto mt-4 rounded-full"/>
       </div>
     )
   }

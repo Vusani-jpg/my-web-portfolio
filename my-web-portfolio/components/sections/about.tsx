@@ -17,27 +17,27 @@ export default function About() {
 	const quickFacts = [
 		{
 			key: "software-engineer",
-			icon: <Code className="h-5 w-5 text-primary-foreground" />,
+			icon: <Code className="h-5 w-5" />,
 			title: "Software Engineering",
 			description: "Passionate about coding and innovative Technology ",
 		},
 		{
 			key: "Software-development",
-			icon: <Briefcase className="h-5 w-5 text-teal-400" />,
+			icon: <Briefcase className="h-5 w-5" />,
 			title: "Software Development",
 			description: "Building responsive, user-friendly applications",
 		},
 		{
 			key: "continuous-learner",
-			icon: <GraduationCap className="h-5 w-5 text-teal-400" />,
+			icon: <GraduationCap className="h-5 w-5" />,
 			title: "Mechanical Engineering",
 			description: "Graduate from Cape Peninsula University of Technology",
 		},
 		{
 			key: "johannesburg",
-			icon: <MapPin className="h-5 w-5 text-white" />,
+			icon: <MapPin className="h-5 w-5" />,
 			title: "Johannesburg, Gauteng",
-			description: "Based in RSA",
+			description: "South Africa",
 		},
 	];
 
@@ -52,8 +52,8 @@ export default function About() {
 			>
 				<div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
 					<Image
-						className="mx-auto object-cover max-w-screen-md float-end rounded-2xl shadow-lg shadow-gray-900/50 mt-0.5"
-						src="/images/Ghost.jpg"
+						className="mx-auto object-cover border-2 border-primary max-w-screen-md float-end rounded-2xl shadow-lg shadow-gray-900/50 mt-0.5"
+						src="/images/Photo_.jpg"
 						alt="profile picture"
 						width={374}
 						height={350}
@@ -79,12 +79,9 @@ export default function About() {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
 					{quickFacts.map((fact) => (
-						// Using key as index for simplicity, but in a real app, use a unique identifier
 						<div
-							key={fact.key}
-							// biome-ignore lint/a11y/useSemanticElements: <explanation>
-							role="listitem"
-							className="bg-gray-900 backdrop-blur-sm p-4 rounded-xl border border-gray-800/50 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(45,212,191,0.15)]"
+							key={fact.key} 
+							className="bg-gray-900 backdrop-blur-sm p-4 rounded-xl border border-gray-800/50 hover:border-primary transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] shadow-lg"
 						>
 							<div className="flex items-center gap-4">
 								<div>{fact.icon}</div>

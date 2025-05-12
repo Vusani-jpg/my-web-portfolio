@@ -35,6 +35,9 @@ importers:
       resend:
         specifier: ^4.5.1
         version: 4.5.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      simple-icons:
+        specifier: ^14.13.0
+        version: 14.13.0
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1677,6 +1680,10 @@ packages:
   side-channel@1.1.0:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
+
+  simple-icons@14.13.0:
+    resolution: {integrity: sha512-RUe7J0SDDBAh9Py1ANOA8LkDKJSL+TleDB3+FIaihqf2cNsjeM+V6Pkr3hXX4ug0ZQXToWikdjMMKSFIN2Tc/g==}
+    engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
@@ -3607,6 +3614,8 @@ snapshots:
       side-channel-list: 1.0.0
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
+
+  simple-icons@14.13.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:
